@@ -1,6 +1,12 @@
 import numpy as np
 from scipy.io import savemat
 import matplotlib.pyplot as plt
+from import_handler import get_function_or_fallback 
+
+# Import relevant functions from other files (with error handling)
+parameters_phase3_paperC = get_function_or_fallback("parameters_phase3_paperC")
+TrajectoryGenerator_3Nodes = get_function_or_fallback("TrajectoryGenerator_3Nodes")
+findPattern = get_function_or_fallback("findPattern")
 
 def Varying_c4_phase3():
     """Python implementation of Varying_c4 phase3 with params3(3)=121"""
@@ -109,19 +115,6 @@ def Varying_c4_phase3():
     except Exception as e:
         print(f"Error in Varying_c4_phase3: {str(e)}")
         return None
-
-# Placeholder functions (to be implemented)
-def parameters_phase3_paperC():
-    """Placeholder for parameters_phase3_paperC.m"""
-    raise NotImplementedError("Original MATLAB file: parameters_phase3_paperC.m")
-
-def TrajectoryGenerator_3Nodes(totT, params1, params3, params4):
-    """Placeholder for TrajectoryGenerator_3Nodes.m"""
-    raise NotImplementedError("Original MATLAB file: TrajectoryGenerator_3Nodes.m")
-
-def findPattern(x, pattern):
-    """Placeholder for findPattern.m"""
-    raise NotImplementedError("Original MATLAB file: findPattern.m")
 
 if __name__ == "__main__":
     data = Varying_c4_phase3()

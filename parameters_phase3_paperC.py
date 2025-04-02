@@ -29,21 +29,21 @@ def parameters_phase3_paperC():
     m4 = memoryLen4         # All memories reset when x4 is active
     
     # Create parameter vectors (MATLAB-like 1-based indexing simulation)
-    params1 = np.zeros(5)
+    params1 = np.zeros(5, dtype=int)
     params1[0] = m1            # params1(1) in MATLAB
     params1[1] = memoryLen1    # params1(2)
     params1[2] = n_pos1        # params1(3)
     params1[3] = activeThreshold1  # params1(4)
     params1[4] = signal_period1    # params1(5)
     
-    params3 = np.zeros(5)
+    params3 = np.zeros(5, dtype=int)
     params3[0] = memoryLen3    # params3(1)
     params3[1] = activeThreshold3  # params3(2)
     params3[2] = signal_period3    # params3(3)
     params3[3] = m3            # params3(4)
     params3[4] = n_pos3        # params3(5)
     
-    params4 = np.zeros(4)
+    params4 = np.zeros(4, dtype=int)
     params4[0] = memoryLen4    # params4(1)
     params4[1] = activeThreshold4  # params4(2)
     params4[2] = signal_period4    # params4(3)

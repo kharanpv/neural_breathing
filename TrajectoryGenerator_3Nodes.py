@@ -1,4 +1,11 @@
 import numpy as np
+from import_handler import get_function_or_fallback 
+
+# Import relevant functions from other files (with error handling)
+signalGenerator = get_function_or_fallback("signalGenerator")
+f1 = get_function_or_fallback("f1")
+f3_A = get_function_or_fallback("f3_A")
+f4 = get_function_or_fallback("f4")
 
 def TrajectoryGenerator_3Nodes(TotalTime, params1, params3, params4):
     """
@@ -60,20 +67,3 @@ def TrajectoryGenerator_3Nodes(TotalTime, params1, params3, params4):
         x4 = current_state_Net4[0]
     
     return Net1, Net3, Net4
-
-# Placeholder functions (TODO: Implement these)
-def signalGenerator(TotalTime, period):
-    """Equivalent of signalGenerator.m"""
-    raise NotImplementedError("TODO: Implement signalGenerator()")
-
-def f1(current_state, x3, x4, c1, params1):
-    """Equivalent of f1.m"""
-    raise NotImplementedError("TODO: Implement f1()")
-
-def f3_A(current_state, c3, params3):
-    """Equivalent of f3_A.m"""
-    raise NotImplementedError("TODO: Implement f3_A()")
-
-def f4(current_state, x3, c4, params4):
-    """Equivalent of f4.m"""
-    raise NotImplementedError("TODO: Implement f4()")

@@ -1,6 +1,12 @@
 import numpy as np
 from scipy.io import savemat
 import matplotlib.pyplot as plt
+from import_handler import get_function_or_fallback 
+
+# Import relevant functions from other files (with error handling)
+parameters_phase2_paperC = get_function_or_fallback("parameters_phase2_paperC")
+TrajectoryGenerator_3Nodes = get_function_or_fallback("TrajectoryGenerator_3Nodes")
+findPattern = get_function_or_fallback("findPattern")
 
 def Varying_c1_phase2():
     """Python version of Varying_c1_phase2.m"""
@@ -110,25 +116,6 @@ def Varying_c1_phase2():
     
     All_data = All_data[:count, :]
     savemat('AllData_varyingc1_totBreath1_phase2.mat', {'All_data': All_data})
-
-# Placeholder functions (TODO: Implement these)
-def parameters_phase2_paperC():
-    """Equivalent of parameters_phase2_paperC.m"""
-    raise NotImplementedError("TODO: Implement parameters_phase2_paperC()")
-
-def TrajectoryGenerator_3Nodes(totT, params1, params3, params4):
-    """Equivalent of TrajectoryGenerator_3Nodes.m"""
-    raise NotImplementedError("TODO: Implement TrajectoryGenerator_3Nodes()")
-
-def findPattern(signal, pattern):
-    """Equivalent of findPattern() from MATLAB"""
-    # Simple implementation (replace with actual pattern matching)
-    pattern_len = len(pattern)
-    matches = []
-    for i in range(len(signal) - pattern_len + 1):
-        if np.array_equal(signal[i:i+pattern_len], pattern):
-            matches.append(i)
-    return np.array(matches)
 
 if __name__ == "__main__":
     Varying_c1_phase2()

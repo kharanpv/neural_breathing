@@ -1,6 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import savemat
+from import_handler import get_function_or_fallback 
+
+# Import relevant functions from other files (with error handling)
+parameters_phase3_paperC = get_function_or_fallback("parameters_phase3_paperC")
+signalGenerator = get_function_or_fallback("signalGenerator")
+f1 = get_function_or_fallback("f1")
+f3_A = get_function_or_fallback("f3_A")
+f4 = get_function_or_fallback("f4")
 
 def TrajectoryGenerator_3Nodes_plot():
     """Python implementation of TrajectoryGenerator_3Nodes_plot.m"""
@@ -94,27 +102,6 @@ def TrajectoryGenerator_3Nodes_plot():
     except Exception as e:
         print(f"Error in TrajectoryGenerator_3Nodes_plot: {str(e)}")
         return None, None, None
-
-# Placeholder functions (to be implemented)
-def parameters_phase3_paperC():
-    """Placeholder for parameters_phase3_paperC.m"""
-    raise NotImplementedError("Original MATLAB file: parameters_phase3_paperC.m")
-
-def signalGenerator(TotalTime, signal_period):
-    """Placeholder for signalGenerator.m"""
-    raise NotImplementedError("Original MATLAB file: signalGenerator.m")
-
-def f1(current_state, x3, x4, control, params1):
-    """Placeholder for f1.m"""
-    raise NotImplementedError("Original MATLAB file: f1.m")
-
-def f3_A(current_state, control, params3):
-    """Placeholder for f3_A.m"""
-    raise NotImplementedError("Original MATLAB file: f3_A.m")
-
-def f4(current_state, x3, control, params4):
-    """Placeholder for f4.m"""
-    raise NotImplementedError("Original MATLAB file: f4.m")
 
 if __name__ == "__main__":
     Net1, Net3, Net4 = TrajectoryGenerator_3Nodes_plot()

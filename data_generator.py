@@ -1,5 +1,13 @@
 import numpy as np
 from scipy.io import savemat
+from import_handler import get_function_or_fallback 
+
+# Import relevant functions from other files (with error handling)
+Varying_c1_phase3 = get_function_or_fallback("Varying_c1_phase3")
+Varying_c1_phase2 = get_function_or_fallback("Varying_c1_phase2")
+Varying_c3_phase3 = get_function_or_fallback("Varying_c3_phase3")
+Varying_c3_phase2 = get_function_or_fallback("Varying_c3_phase2")
+Varying_c4_phase3 = get_function_or_fallback("Varying_c4_phase3")
 
 def dataGenerator_for_BoxPlot():
     """Python version of dataGenerator_for_BoxPlot.m"""
@@ -29,30 +37,6 @@ def dataGenerator_for_BoxPlot():
             print(f"Unexpected error: {e}")
     else:
         print("Warning: Invalid choice")
-
-# ==============================================
-# EXPLICIT PLACEHOLDER FUNCTIONS (ALL VARIATIONS)
-# ==============================================
-
-def Varying_c1_phase3():
-    """Original MATLAB file: Varying_c1_phase3.m"""
-    raise NotImplementedError("Implementation required: Varying_c1_phase3.m")
-
-def Varying_c1_phase2():
-    """Original MATLAB file: Varying_c1_phase2.m"""
-    raise NotImplementedError("Implementation required: Varying_c1_phase2.m")
-
-def Varying_c3_phase3():
-    """Original MATLAB file: Varying_c3_phase3.m"""
-    raise NotImplementedError("Implementation required: Varying_c3_phase3.m")
-
-def Varying_c3_phase2():
-    """Original MATLAB file: Varying_c3_phase2.m"""
-    raise NotImplementedError("Implementation required: Varying_c3_phase2.m")
-
-def Varying_c4_phase3():
-    """Original MATLAB file: Varying_c4_phase3.m"""
-    raise NotImplementedError("Implementation required: Varying_c4_phase3.m")
 
 if __name__ == "__main__":
     dataGenerator_for_BoxPlot()
